@@ -7,15 +7,30 @@
     background-color: darkseagreen;
 }
 .calculator{
-    width: 375px; /* Can be in percentage also. */
-    height: auto;
+    width: 375px; 
+    height: 100%;
     margin: 0 auto;
     padding: 10px;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
 
 }
 .input_box {
-    height: 30px;
+    width: 375px;
+    height: 60px;
     background-color: antiquewhite;
-    margin: auto;
+    margin-top: 20px;
+}
+
+.controls {
+    margin-top: 5%;
+}
+
+.btnLayout{
+    width: 375px;
+    display: grid;
+    grid-template-columns: repeat(4, 75px);
 }
