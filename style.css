@@ -27,10 +27,24 @@
 
 .controls {
     margin-top: 5%;
+    width: 50%;
+    height: 35px;
 }
 
 .btnLayout{
-    width: 375px;
     display: grid;
-    grid-template-columns: repeat(4, 75px);
+    grid-template-columns: [col1-start] 93.75px [col1] 93.75px [col2] 93.75px [col3] 93.75px [col4];
+    grid-template-rows: [first] 80px [second] 80px [third] 80px [last] 80px [last];
 }
+
+
+.zero{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.divide{
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
