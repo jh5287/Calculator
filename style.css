@@ -29,8 +29,10 @@
 
 .btnLayout{
     display: grid;
-    grid-template-columns: repeat(3,80px) 135px ;
+    grid-template-columns: repeat(3,75px) 135px ;
     grid-template-rows: repeat(5, 70px);
+    column-gap: 10px;
+    row-gap: 10px;
 }
 
 .btnClear{
@@ -45,12 +47,15 @@
 }
 
 .zero{
+    width: 200px;
+    height: 50px;
     grid-column-start: 1;
     grid-column-end: 4;
-    
+
 }
 
 .divide{
+    height: 50px;
     grid-column-start: 4;
     grid-column-end: 5;
 }
