@@ -1,7 +1,7 @@
 #calc_body {
     height: 500px;
     width: 450px;
-    border-radius: 25px;
+    border-radius: 0px;
     margin: auto;
     margin-top: 30px;
     background-color: darkseagreen;
@@ -18,18 +18,23 @@
     align-content: flex-start;
 
 }
-.input_box {
+input[type=text] {
     width: 375px;
     height: 60px;
-    background-color: antiquewhite;
     margin-top: 20px;
     margin-bottom: 25px;
 }
 
-
+button{
+    background: transparent;
+    border: none;
+    justify-content: center;
+    color: white;
+    font-size: 1.75em;
+}
 .btnLayout{
     display: grid;
-    grid-template-columns: repeat(3,75px) 135px ;
+    grid-template-columns: repeat(4, 85px);
     grid-template-rows: repeat(5, 70px);
     column-gap: 10px;
     row-gap: 10px;
@@ -47,7 +52,6 @@
 }
 
 .zero{
-    width: 200px;
     height: 50px;
     grid-column-start: 1;
     grid-column-end: 4;
