@@ -1,5 +1,5 @@
 #calc_body {
-    height: 500px;
+    height: 510px;
     width: 450px;
     border-radius: 0px;
     margin: auto;
@@ -23,11 +23,14 @@ input[type=text] {
     height: 60px;
     margin-top: 20px;
     margin-bottom: 25px;
+    text-align: right;
+    font-size: 40px;
 }
 
 button{
-    background: transparent;
-    border: none;
+    background: darkgreen;
+    border: thin green;
+    border-radius: 10px;
     justify-content: center;
     color: white;
     font-size: 1.75em;
