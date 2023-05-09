@@ -1,9 +1,16 @@
+body {
+    background-color: lightgray;
+}
+
 #calc_body {
     height: 510px;
     width: 450px;
-    border-radius: 0px;
+    border-radius: 12px;
+    /*border-style: groove;
+    border-color: darkgreen;
+    border-width: 5px;*/
     margin: auto;
-    margin-top: 30px;
+    margin-top: 50px;
     background-color: darkseagreen;
 }
 .calculator{
@@ -20,9 +27,9 @@
 }
 input[type=text] {
     width: 375px;
-    height: 60px;
+    height: 70px;
     margin-top: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-align: right;
     font-size: 40px;
 }
@@ -32,7 +39,7 @@ button{
     border: thin green;
     border-radius: 10px;
     justify-content: center;
-    color: white;
+    color: ivory;
     font-size: 1.75em;
 }
 .btnLayout{

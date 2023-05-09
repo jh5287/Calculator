@@ -11,6 +11,11 @@ const btnSelectr = document.querySelectorAll(".btn");
 const txtBx = document.getElementById('display');
 for(const btns of btnSelectr){
     btns.addEventListener('click', () => {
-        txtBx.value = btns.textContent;
+        txtBx.value += btns.textContent;
     })
 }
+
+const clear_button = document.querySelector(".btnClear");
+clear_button.addEventListener('click', () =>{
+    txtBx.value = '';
+})
