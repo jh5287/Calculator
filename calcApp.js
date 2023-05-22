@@ -63,7 +63,13 @@ clear_button.addEventListener('click', () =>{
 //delete button
 const delete_button = document.querySelector(".btnDelete");
 delete_button.addEventListener('click', () => {
-    txtBx.value = txtBx.value.slice(0, txtBx.value.length - 1);
+    if(txtBx.value[txtBx.value.length - 2] == "+" ||
+    txtBx.value[txtBx.value.length - 2] == "-" ||
+    txtBx.value[txtBx.value.length - 2] == "x" ||
+    txtBx.value[txtBx.value.length - 2] == "/")
+        txtBx.value = txtBx.value.slice(0, txtBx.value.length - 3);
+    else
+        txtBx.value = txtBx.value.slice(0, txtBx.value.length - 1);
 })
 
 
