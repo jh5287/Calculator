@@ -17,7 +17,27 @@ const operate = (x, y, operator) => {
         return divide(x, y);
 };
 
+const isOperator = (operator) => {
+    if(operator == "+")
+        return true;
+    if(operator == "-")
+        return true;
+    if(operator == "x")
+        return true;
+    if(operator == "/")
+        return true;
+}
 
+const hasOperator = (operator) => {
+    if(operator.includes("+"))
+        return true;
+    if(operator.includes("-"))
+        return true;
+    if(operator.includes("x"))
+        return true;
+    if(operator.includes("/"))
+        return true;
+} 
 
 
 //adds functionality to buttons
@@ -37,8 +57,7 @@ for(const operatorBtn of operatorSelector){
         //if the operator is already in the string and you try to add another 
         //operator then complete the operation
         //the else statement is for normal adding of inputs
-        if(txtBx.value.includes(" + ") || txtBx.value.includes(" - ") ||
-        txtBx.value.includes(" / ") || txtBx.value.includes(" x ")){
+        if(hasOperator(txtBx.value)){
             let input = txtBx.value;
             const newInput = input.split(" ");
             let operand1 = Number(newInput[0]);
@@ -63,10 +82,7 @@ clear_button.addEventListener('click', () =>{
 //delete button
 const delete_button = document.querySelector(".btnDelete");
 delete_button.addEventListener('click', () => {
-    if(txtBx.value[txtBx.value.length - 2] == "+" ||
-    txtBx.value[txtBx.value.length - 2] == "-" ||
-    txtBx.value[txtBx.value.length - 2] == "x" ||
-    txtBx.value[txtBx.value.length - 2] == "/")
+    if(isOperator(txtBx.value[txtBx.value.length - 2]))
         txtBx.value = txtBx.value.slice(0, txtBx.value.length - 3);
     else
         txtBx.value = txtBx.value.slice(0, txtBx.value.length - 1);
@@ -75,7 +91,7 @@ delete_button.addEventListener('click', () => {
 
 const enter_button = document.querySelector(".equal");
 enter_button.addEventListener('click', () => {
-    if (txtBx.value.length >= 5){
+    if (!isOperator(txtBx.value[txtBx.value.length - 2]) && hasOperator(txtBx.value)){
         let input = txtBx.value;
         const newInput = input.split(" ");
         let operand1 = Number(newInput[0]);
