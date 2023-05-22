@@ -5,10 +5,8 @@ body {
 #calc_body {
     height: 510px;
     width: 450px;
+    border: 2px solid darkgreen;
     border-radius: 12px;
-    /*border-style: groove;
-    border-color: darkgreen;
-    border-width: 5px;*/
     margin: auto;
     margin-top: 50px;
     background-color: darkseagreen;
@@ -36,11 +34,14 @@ input[type=text] {
 
 button{
     background: darkgreen;
-    border: thin green;
     border-radius: 10px;
     justify-content: center;
     color: ivory;
     font-size: 1.75em;
+}
+
+.controls{
+    background-color: green;
 }
 .btnLayout{
     display: grid;
@@ -55,7 +56,7 @@ button{
     grid-column-end: 3;
 }
 
-.btnEnter{
+.btnDelete{
 
     grid-column-start: 3;
     grid-column-end: 5;
@@ -64,7 +65,7 @@ button{
 .zero{
     height: 50px;
     grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-end: 3;
 
 }
 
