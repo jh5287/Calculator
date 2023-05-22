@@ -25,13 +25,18 @@ const btnSelectr = document.querySelectorAll(".btn");
 const txtBx = document.getElementById('display');
 for(const btns of btnSelectr){
     btns.addEventListener('click', () => {
-        txtBx.value += btns.textContent;
+        //checks to see if input box has too many chars or not
+        if(txtBx.value.length < 18)
+            txtBx.value += btns.textContent;
     })
 }
 
 const operatorSelector = document.querySelectorAll(".operator");
 for(const operatorBtn of operatorSelector){
     operatorBtn.addEventListener('click', () => {
+        //if the operator is already in the string and you try to add another 
+        //operator then complete the operation
+        //the else statement is for normal adding of inputs
         if(txtBx.value.includes(" + ") || txtBx.value.includes(" - ") ||
         txtBx.value.includes(" / ") || txtBx.value.includes(" x ")){
             let input = txtBx.value;
@@ -71,6 +76,10 @@ enter_button.addEventListener('click', () => {
         let operand2 = Number(newInput[2]);
         let operator = newInput[1];
         txtBx.value = operate(operand1, operand2, operator);
+        //gets rid of long trailing decimals
+        if (txtBx.value.length > 15){ 
+            txtBx.value = txtBx.value.slice(0, 14);
+        }
     }
 })
 
