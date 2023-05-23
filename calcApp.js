@@ -29,13 +29,13 @@ const isOperator = (operator) => {
 }
 
 const hasOperator = (operator) => {
-    if(operator.includes("+"))
+    if(operator.includes(" + "))
         return true;
-    if(operator.includes("-"))
+    if(operator.includes(" - "))
         return true;
-    if(operator.includes("x"))
+    if(operator.includes(" x "))
         return true;
-    if(operator.includes("/"))
+    if(operator.includes(" / "))
         return true;
 } 
 
@@ -54,25 +54,32 @@ for(const btns of btnSelectr){
 const operatorSelector = document.querySelectorAll(".operator");
 for(const operatorBtn of operatorSelector){
     operatorBtn.addEventListener('click', () => {
-        //if the operator is already in the string and you try to add another 
-        //operator then complete the operation
-        if(hasOperator(txtBx.value)){
+        /*
+        if the last term is not an operator AND the text box already HAS an operator in it
+        then procede with the arithmetic
+        */
+        if(!isOperator(txtBx.value[txtBx.value.length - 2]) && hasOperator(txtBx.value)){
             let input = txtBx.value;
             const newInput = input.split(" ");
             let operand1 = Number(newInput[0]);
             let operand2 = Number(newInput[2]);
             let operator = newInput[1];
-            if(operand2 == 0 && operator == "/"){
+            if(operand2 == 0 && operator == "/"){   //divide by zero check
                 alert("Please...don't...");
                 txtBx.value = '';
                 }
-            else{
+            else{                                   //if not then operate and add the operator
                 txtBx.value = operate(operand1, operand2, operator);
                 txtBx.value += operatorBtn.textContent;
             }
         }
-        else {          //normal input
-            txtBx.value += operatorBtn.textContent;
+        else if(txtBx.value !== ""){
+            if(!isOperator(txtBx.value[txtBx.value.length - 2]))
+                txtBx.value += operatorBtn.textContent;
+            else{
+                txtBx.value = txtBx.value.slice(0, txtBx.value.length - 3);
+                txtBx.value += operatorBtn.textContent;
+            }
         }
     })
 }
@@ -91,6 +98,7 @@ delete_button.addEventListener('click', () => {
         txtBx.value = txtBx.value.slice(0, txtBx.value.length - 3);
     else
         txtBx.value = txtBx.value.slice(0, txtBx.value.length - 1);
+
 })
 
 
